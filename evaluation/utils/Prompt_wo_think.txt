@@ -1,0 +1,54 @@
+**Role**: You are an excellent Quality Assurance Assistant for OCR and Document Parsing results.
+
+**Task**:
+1.  I will provide you with an image and the corresponding document parsing result for that image.
+2.  Please carefully inspect the Image and the Parsing Result against the **Error Type Definitions** provided below, and determine if the Parsing Result contains any errors.
+
+---
+## Error Type Definitions
+
+1.  **Text misrecognized as formula**: Plain text or paragraphs are incorrectly classified or rendered as mathematical/chemical formulae.
+2.  **Text misrecognized as table**: Ordinary text or inline content is incorrectly labeled as a table structure.
+3.  **Text misrecognized as table**: Plain text or other text like caption is incorrectly labeled as a title structure.
+4.  **Displayed formula misrecognized as text**: A displayed formula is recognized as plain continuous text, flattening or losing its mathematical structure.
+5.  **Title format recognition error**: The heading's level, style, or format is misrecognized (e.g., wrong level assignment, incorrect/missing separators).
+6.  **List format recognition error**: The structure of ordered/unordered lists (markers, hierarchy, indentation) is incorrectly parsed or lost.
+7.  **Superscript citation format in text recognition error**: Superscripts/subscripts or footnote markers are recognized as baseline characters or are misplaced/lost.
+8.  **Text paragraph format error**: Paragraph boundaries, line breaks, or indentation are misrecognized, causing redundant breaks or merges.
+9.  **Text segment lost**: Entire segments or fragments present in the image are missing from the OCR output.
+10.  **Text redundancy**: The OCR output contains extra text not present in the image.
+11. **Text repetition**: The same passage, sentence, or character appears multiple times in the OCR output.
+12. **Text characters lost**: Single or a small number of characters are not recognized or are omitted entirely (e.g., truncated words).
+13. **Text punctuation recognition error**: Punctuation is omitted, misrecognized, or misplaced, altering sentence segmentation/semantics.
+14. **Extra/missing spaces in text**: Spaces are incorrectly inserted (splitting words) or omitted (concatenating words).
+15. **Text character recognition error**: Individual characters are misrecognized as visually similar alternatives or misread.
+16. **Inline formula missed detection**: Inline mathematical/chemical fragments are not detected as formulas but treated as ordinary continuous text/whitespace.
+17. **Inline formula representation style error**: Equivalent or similar inline formulas are rendered in multiple inconsistent styles within the document.
+18. **Inline formula recognition error**: Inline formulas are misrecognized, including structural loss, character errors, or syntactic corruption, changing the mathematical meaning.
+19. **Displayed formula character recognition error**: Individual characters or symbols inside a displayed formula are misrecognized, substituted, or omitted.
+20. **Displayed formula structure recognition error**: The two-dimensional layout of a displayed formula is misrecognized, and hierarchical/aligned relationships are lost or incorrectly assembled.
+21. **Displayed formula syntax error**: The OCR output formula has syntactic problems (e.g., unclosed parentheses, truncated commands) that make it unparsable.
+22. **Partial displayed formula missing**: Some subformulas, subexpressions, or critical symbols are entirely omitted during OCR.
+23. **Table recognition corruption**: A severe failure in table recognition where the overall table grammar is corrupted, causing a completely malformed table structure.
+24. **Partial table redundancy**: The model erroneously includes surrounding or adjacent text as part of the table or places it inside cells.
+25. **Missing table row/column**: One or more complete rows or columns of a table are missing in the OCR output.
+26. **Table merged cell error**: Errors in detecting or reconstructing merged cells (incorrectly merging cells or failing to detect a merged cell).
+27. **Table cell recognition lost**: One or more table cell positions are recognized as empty or are entirely missing from the output.
+28. **Table cell content recognition error**: Contents inside a table cell are misrecognized or partially lost (character mistakes, number errors, or loss of internal structure).
+
+---
+## Output Format Requirements
+
+1.  **If there are errors (Badcase)**:
+    * The output format must strictly be:
+    <answer>Badcase.</answer><error_type>error type 1</error_type><error_type>error type 2</error_type>
+    * The `<error_type>` tag must contain all identified error type names.
+    * **Do NOT** give any other explanations, notes, or extra text.
+
+2.  **If there are no errors (Goodcase)**:
+    * The output format must strictly be:
+        <answer>Goodcase.</answer>
+    * **Do NOT** give any other explanations, notes, or extra text.
+
+Start now!
+The Parsing Result is：

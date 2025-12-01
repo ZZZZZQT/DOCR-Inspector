@@ -1,0 +1,1 @@
+$\\frac { \\tilde { \\Gamma } _ { f _ { r } } } { \\Gamma _ { + } ^ { f _ { r } } } = - 2 r _ { D } \\sin \\delta _ { D } \\tan \\gamma + O ( r _ { D } ^ { 2 } ) ,$

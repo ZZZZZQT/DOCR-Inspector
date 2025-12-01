@@ -1,0 +1,198 @@
+[
+    {
+        "Text misrecognized as formula": {
+            "error_type_cn": "文本误识别成公式",
+            "defination_cn": "将在图像中以连续文本或段落形式出现的普通文字错误归类或渲染为数学/化学公式或公式结构（例如引入分式结构、上下标排版、专用公式符号或 LaTeX 风格标记），从而改变了内容的语义展示与可读性。",
+            "defination_en": "Plain continuous text or paragraphs present in the image are incorrectly classified or rendered as mathematical/chemical formulae or formula-like structures (e.g., introducing fraction layouts, superscript/subscript formatting, formula symbols, or LaTeX-like tokens), altering the semantic presentation and readability."
+        }
+    },
+    {
+        "Text misrecognized as table": {
+            "error_type_cn": "文本误识别成表格",
+            "defination_cn": "将原本为连续段落或分段文本的内容错误地切分为多行多列的表格结构，OCR 输出包含行列边界、单元格标识或网格样式，但图像上并不存在表格线、列对齐或单元格边界。",
+            "defination_en": "Continuous paragraphs or segmented text are wrongly parsed into a multi-row/multi-column table structure; the OCR output shows row/column boundaries, cell tags, or grid-like layout even though the image lacks table lines, consistent column alignment, or cell delimiters."
+        }
+    },
+    {
+        "Text misrecognized as title": {
+            "error_type_cn": "文本误识别成标题",
+            "defination_cn": "把原本属于正文或行内文本的内容错误标记为标题（即被赋予标题级别、较大字号、加粗、居中或编号样式），导致结构化输出把非标题文本上提为章节/小节标题。",
+            "defination_en": "Ordinary body text or inline content is incorrectly labeled as a title (assigned heading level, larger font size, bolding, centering, or numbering), causing the structured output to elevate non-heading text to section or subsection status."
+        }
+    },
+    {
+        "Displayed formula misrecognized as text": {
+            "error_type_cn": "行间公式误识别成文本",
+            "defination_cn": "将图像中以“行间展示”形式（通常居中、占一行、含分数、根号、求和/积分符号或明显上下标的）出现的数学公式识别成普通连续文本，导致数学结构（分数线、上下标、对齐）被平铺或丢失。",
+            "defination_en": "A displayed formula (usually centered, occupying its own line and containing fractions, radicals, summation/integration symbols, or clear superscripts/subscripts) is recognized as plain continuous text, flattening or losing its mathematical structure (fraction bars, superscripts/subscripts, alignment)."
+        }
+    },
+    {
+        "Title format recognition error": {
+            "error_type_cn": "标题格式识别错误",
+            "defination_cn": "标题的层级、样式或格式未被正确识别：包括把标题识别成其它类型（如表格、公式或普通段落），或标题标记与文本之间缺少/错误的分隔（例如编号符号与标题文本直接连写、缺少空格或断行），以及标题级别错误（把二级标题识别为三级等）。",
+            "defination_en": "The heading’s level, style, or format is misrecognized: this includes classifying a heading as another type (table, formula, or ordinary paragraph), incorrect/missing separators between heading markers and text (e.g., numbering or hash sign glued to the title without space), or wrong heading level assignment (e.g., treating an H2 as H3)."
+        }
+    },
+    {
+        "List format recognition error": {
+            "error_type_cn": "列表格式识别错误",
+            "defination_cn": "有序或无序列表的结构（编号、字母、项目符号、缩进层级）被错误解析或丢失，表现为：1. 编号/符号被识别为普通字符或丢失；2. 层级/缩进信息丢失导致连续项合并成段落；3. 项目顺序被打乱或键号识别错误（例如将“1.”识别为“l.”）。",
+            "defination_en": "The structure of ordered or unordered lists (numbers, letters, bullets, indentation levels) is incorrectly parsed or lost, manifesting as: (1) numbering/bullets recognized as ordinary characters or omitted; (2) hierarchy/indentation lost causing items to merge into paragraphs; (3) item order or markers corrupted (e.g., \"1.\" misread as \"l.\")."
+        }
+    },
+    {
+        "Superscript citation format in text recognition error": {
+            "error_type_cn": "上下标格式丢失",
+            "defination_cn": "文本中本应作为上标/下标（如参考文献上标）或脚注引用号的字符被识别为普通基线字符或位置错误，导致编号/注释信息与正文融合、次序混乱或格式（高度/字体缩放）不正确。",
+            "defination_en": "Characters that should be rendered as superscripts/subscripts (e.g., reference citation numbers) or footnote markers are recognized as baseline characters or misplaced, causing annotation numbers/notes to merge into the main text, lose order, or have incorrect vertical position/scale."
+        }
+    },
+    {
+        "Text paragraph format error": {
+            "error_type_cn": "段落结构错误",
+            "defination_cn": "段落的边界、换行、缩进或段间间距被错误识别，产生断行冗余或合并（例如本应换行的句子被连接为一行，或单行被错误拆成多行），从而破坏段落的语义边界与阅读顺序。",
+            "defination_en": "Paragraph boundaries, line breaks, indentation, or inter-paragraph spacing are misrecognized, causing redundant breaks or merges (e.g., sentences that should wrap are concatenated into one line, or a single line is erroneously split), damaging paragraph semantics and reading order."
+        }
+    },
+    {
+        "Text segment lost": {
+            "error_type_cn": "文本段遗漏",
+            "defination_cn": "OCR 输出中缺少图像中存在的整段或片段（整行、句子、表格单元或图注等被完全漏掉），以致输出不完整并且可能影响信息完整性与后续理解。",
+            "defination_en": "Entire segments or fragments present in the image (a whole line, sentence, table cell, caption, etc.) are missing from the OCR output, resulting in incomplete output that impairs information completeness and downstream understanding."
+        }
+    },
+    {
+        "Text redundancy": {
+            "error_type_cn": "文本冗余",
+            "defination_cn": "OCR 输出中包含图像上并不存在的额外文本（例如重复插入的页眉/页脚、误识别的图形标记当作文字、或模型合并了邻页/模板文本），导致输出比图像实际内容多出无关或重复信息。",
+            "defination_en": "The OCR output contains extra text not present in the image (e.g., duplicated headers/footers, graphic marks misrecognized as text, or merged template/neighboring-page text), producing irrelevant or duplicated content beyond the actual image."
+        }
+    },
+    {
+        "Text repetition": {
+            "error_type_cn": "文本重复",
+            "defination_cn": "同一语段、句子或字符在 OCR 输出中被重复出现一次或多次（连续重复或间断重复），造成冗余且可能是因为大语言模型自身的幻觉、重复检测等问题引起。",
+            "defination_en": "The same passage, sentence, or character appears multiple times in the OCR output (either consecutively or intermittently), causing redundancy often due to hallucination of LLM or duplicate detection in post-processing and so on."
+        }
+    },
+    {
+        "Text characters lost": {
+            "error_type_cn": "字符丢失",
+            "defination_cn": "在字符级别上有单个或少数字符未被识别或被完全省略（例如缺少字母、数字或符号），这会导致单词缺字、词语不完整或语义受损。",
+            "defination_en": "At the character level, single or a small number of characters are not recognized or are omitted entirely (e.g., missing letters, digits, or symbols), resulting in truncated words, incomplete tokens, or degraded semantics."
+        }
+    },
+    {
+        "Text punctuation recognition error": {
+            "error_type_cn": "标点符号错误",
+            "defination_cn": "标点符号被漏识别、错识为其它符号、中文/英文标点混用、括号或引号丢失或位置错误，导致句子断句、语义界定或引用信息出现错误。",
+            "defination_en": "Punctuation is omitted, misrecognized as other symbols, mixed between Chinese/English variants, or parentheses/quotes are lost/misplaced, causing incorrect sentence segmentation, altered semantics, or misinterpreted quotations/references."
+        }
+    },
+    {
+        "Extra/missing spaces in text": {
+            "error_type_cn": "空格错误",
+            "defination_cn": "空格的识别出现错误：包括将本应连写的词语错误插入空格（导致单词被拆开）、或遗漏必要的空格（导致多个词粘连），同时在英文单词间、数字与单位间或中文与英文混排时特别明显。",
+            "defination_en": "Space recognition errors occur where spaces are incorrectly inserted between originally contiguous tokens (splitting words) or omitted where required (concatenating separate words), notably affecting English word boundaries, number-unit separation, and mixed Chinese-English layouts."
+        }
+    },
+    {
+        "Text character recognition error": {
+            "error_type_cn": "字符识别错误",
+            "defination_cn": "单个字符被错误识别为形态相近的另一个字符（例如 O ↔ 0、I/ l ↔ 1、rn ↔ m、“—” ↔ “-”等），或者因图像噪声/模糊导致读错字符，改变原文词形或字符序列。",
+            "defination_en": "Individual characters are misrecognized as visually similar alternatives (e.g., O ↔ 0, I/ l ↔ 1, rn ↔ m, “—” ↔ “-”), or misread due to image noise/blur, altering original word forms or character sequences."
+        }
+    },
+    {
+        "Inline formula missed detection": {
+            "error_type_cn": "行内公式漏检/遗漏",
+            "defination_cn": "在文本行内部实际存在的数学或化学公式片段（如上标/下标、分数、根号、希腊字母、运算符、脚注式引用号、或明显的符号组合）未被识别为公式 —— OCR 输出中完全没有把该片段标注为公式或专门的数学 token，而是把它忽略或当作普通连续文本/空白处理，导致公式语义与结构信息丢失。该错误会让输出缺少原文中的数学信息或使句子语义不连贯。",
+            "defination_en": "Mathematical/chemical inline fragments that appear inside a text line (e.g., superscripts/subscripts, fractions, radicals, Greek letters, operators, citation markers, or distinctive symbol combinations) are not detected as formulas — the OCR output omits marking them as formula tokens and instead ignores them or treats them as ordinary continuous text/whitespace, causing loss of formula semantics and structural information."
+        }
+    },
+    {
+        "Inline formula representation style error": {
+            "error_type_cn": "行内公式表达风格不一致",
+            "defination_cn": "同一文本段或同一文档中，对等价或相似的行内公式采用了多种互不一致的表示方式（例如部分被输出为 Unicode 数学符号（α、β、∑）、部分被输出为 LaTeX 风格的标记（\\alpha, ^{2}, \\frac{a}{b}），还有的被近似为纯文本拼写（alpha, a/b, a^2））。这种风格不一致会造成语义解析困难、后处理难以统一以及下游解析器/呈现器出错。",
+            "defination_en": "Within the same paragraph or document, equivalent or similar inline formulas are rendered in multiple inconsistent styles (for example, some outputs use Unicode math symbols like “α, β, ∑”, others use LaTeX-like markup such as “\\alpha”, “^{2}”, “\\frac{a}{b}”, and yet others approximate with plain text like “alpha”, “a/b”, “a^2”). Such heterogeneity undermines semantic parsing, hinders normalization, and breaks downstream renderers or analyzers."
+        }
+    },
+    {
+        "Inline formula recognition error": {
+            "error_type_cn": "行内公式识别错误",
+            "defination_cn": "行内公式被错误识别，包含但不限于以下几类问题：公式的排版结构被破坏（例如分数的横线被丢失或被错误展平为“a/b”）、上下标位置错误（上标/下标被识别为基线字符或丢失）、公式字符（希腊字母、运算符、特殊符号）识别错误、公式语法被破坏（如括号不配对、LaTeX 语法残缺）、公式被不完整识别（部分子项缺失或被拆分到相邻词中）。这些错误会改变公式的数学含义或使其无法被解析为正确的数学表达式。",
+            "defination_en": "Inline formulas are misrecognized, including but not limited to: structural loss (e.g., fraction bars removed or flattened to “a/b”), misplacement or loss of superscripts/subscripts (treated as baseline characters), character-level errors of formula symbols (Greek letters, operators, special symbols), syntactic corruption (unmatched parentheses, broken LaTeX tokens), and partial/fragmented recognition (subterms missing or split across adjacent tokens). Such errors change the mathematical meaning or render the expression unparseable."
+        }
+    },
+    {
+        "Displayed formula character recognition error": {
+            "error_type_cn": "行间公式字符识别错误",
+            "defination_cn": "在独立展示的行间公式中，单个字符或符号被错误识别、替换或遗漏（例如数字、拉丁/希腊字母、上下标符号、运算符号、关系符号等），使得公式中变量、系数或运算符出错，从而改变或破坏了原公式的数学含义。常见情况包括把“0”识别为“O”，“1”识别为“l/ I”，“×”识别为“x”或“*”，“−”识别为“-”/“—”，或把希腊字母识别为外形相近的拉丁字母等。",
+            "defination_en": "Individual characters or symbols inside a displayed formula are misrecognized, substituted, or omitted (e.g., digits, Latin/Greek letters, superscript/subscript markers, operators, relational symbols), resulting in incorrect variables, coefficients or operators that alter or break the mathematical meaning of the original expression. Common confusions include 0↔O, 1↔l/I, ×↔x/*, −↔- /—, and Greek letters misread as visually similar Latin letters."
+        }
+    },
+    {
+        "Displayed formula structure recognition error": {
+            "error_type_cn": "行间公式结构识别错误",
+            "defination_cn": "对行间公式的版面结构（例如分式的上下结构与分数线、上下/下标的垂直排布、根式的根号覆盖范围、求和/积分符号的上下限位置、矩阵/堆叠式表达）识别错误或被扁平化；即公式的二维布局被线性化或错配，使得应有的层级、对齐、分隔线与组合关系丢失或错误重组。",
+            "defination_en": "The two-dimensional layout of a displayed formula (e.g., numerator/denominator with fraction bar, vertical placement of superscripts/subscripts, radical sign extent, placement of summation/integration limits, matrices/stacked constructs) is misrecognized or flattened; the intended hierarchical, aligned, or grouped relationships are lost or incorrectly reassembled."
+        }
+    },
+    {
+        "Displayed formula syntax error": {
+            "error_type_cn": "行间公式语法错误",
+            "defination_cn": "OCR 输出的行间公式在语法层面不合法或不完整，包含未闭合的括号/花括号、残缺的 LaTeX 命令、丢失必要的运算符或分隔符、非法字符插入或令渲染器无法正确解析/渲染的结构，从而导致公式无法正确重建或呈现。",
+            "defination_en": "The OCR-output displayed formula contains syntactic problems: unclosed parentheses/braces, truncated LaTeX commands, missing required operators or delimiters, inserted invalid characters, or other corruptions that make the expression unparsable or unrenderable by formula interpreters."
+        }
+    },
+    {
+        "Partial displayed formula missing": {
+            "error_type_cn": "行间公式部分丢失",
+            "defination_cn": "对于较复杂或较长的行间公式，OCR 识别过程中部分子公式、子表达式或关键符号（如分子、分母、指数、根号内部、积分的被积函数或上下限等）未被识别或被完全省略，导致输出只保留公式的残片或简化形式，从而损害原公式的完整性与语义。",
+            "defination_en": "In complex or lengthy displayed formulas, some subformulas, subexpressions or critical symbols (e.g., numerator/denominator parts, exponents, content under a radical, integrand or limits) are entirely omitted during OCR, leaving fragments or a collapsed/simplified version of the original expression and  degrading semantic completeness."
+        }
+    },
+    {
+        "Table recognition corruption": {
+            "error_type_cn": "表格结构严重错误",
+            "defination_cn": "指无法用单一或少数几类常见错误描述的严重表格识别失败，表现为表格语法整体错乱（行/列关系、单元格边界、表头/索引位置等严重不一致）、模型重复或拼接错误导致结构完全畸变、或把表格与周围非表格文字混淆成互相嵌套的混合结构。此类错误通常破坏了表格的语义表格化表达，使得无法通过少量修正恢复正确的行列映射与单元格对应关系。",
+            "defination_en": "A severe failure in table recognition that cannot be described by one or a few simple error types: overall table grammar is corrupted (rows/columns relationships, cell boundaries, header/index positions severely inconsistent); model-produced repeated/pasted blocks or structural collapse causes a completely malformed table; or text-and-table contents are mixed into nested, non-tableable structures. These errors break the semantic tabular representation so thoroughly that minor fixes cannot restore correct row–column mappings and cell correspondences."
+        }
+    },
+    {
+        "Partial table redundancy": {
+            "error_type_cn": "部分表格内容冗余",
+            "defination_cn": "模型在识别表格时错误地将表格前后或周围的文本（如表格标题、表注、页眉/页脚、相邻段落、图注）当作表格的一部分或识别到单元格中，导致表格输出比图像实际表格包含额外、不相关或重复的内容，从而产生“冗余单元格/冗余行列”。",
+            "defination_en": "When recognizing a table, the model erroneously includes surrounding or adjacent text (table captions, footnotes, headers/footers, neighboring paragraphs, figure captions) as part of the table or places them inside cells, causing the table output to contain extra, irrelevant, or duplicated content — resulting in redundant cells/rows/columns beyond the actual table."
+        }
+    },
+    {
+        "Missing table row/column": {
+            "error_type_cn": "表格行列漏识别",
+            "defination_cn": "表格中的一个或多个完整行或列在 OCR 输出中缺失（被忽略或合并到其他行列），导致输出的行列数少于图像中实际的行列数，或表格出现列标题与数据列错位、汇总/合计行被丢弃等问题。",
+            "defination_en": "One or more complete rows or columns of a table are missing in the OCR output (ignored or merged into other rows/columns), so the output has fewer rows/columns than the actual image, causing misaligned headers vs. data columns, omitted summary/total rows, or truncated table bodies."
+        }
+    },
+    {
+        "Table merged cell error": {
+            "error_type_cn": "表格合并单元格错",
+            "defination_cn": "对合并单元格（横跨多列或多行的单一单元格）检测或复原错误，包含两类：1. 将多个本应分开的单元格误合并为一个单元格（过度合并）；2. 未识别图像中的合并单元格而错误地将其拆分为多个单元格（过度拆分）。这两种情况都会破坏单元格位置映射与跨列/跨行数据的语义。",
+            "defination_en": "Errors in detecting or reconstructing merged cells (cells spanning multiple columns/rows): (1) incorrectly merging multiple separate cells into a single cell (over-merge); or (2) failing to detect a merged cell and splitting it into several cells (over-split). Both cases break cell-position mapping and the semantics of data spanning columns/rows."
+        }
+    },
+    {
+        "Table cell recognition lost": {
+            "error_type_cn": "表格单元格识别丢失",
+            "defination_cn": "表格中某个或多个单元格的位置被识别为空（没有文本输出）或完全缺失对应项——即 OCR 在应有单元格处未生成任何文本或索引记录，导致表格中出现空白单元格或缺位单元格，而图像上该单元格确有可读内容。",
+            "defination_en": "One or more table cell positions are recognized as empty (no text output) or entirely missing — OCR does not produce any text or index for an existing cell, resulting in blank or absent cells in the output while the image clearly contains readable content at those positions."
+        }
+    },
+    {
+        "Table cell content recognition error": {
+            "error_type_cn": "表格单元格内容识别错误",
+            "defination_cn": "单元格内部的文本或符号被错误识别或部分丢失，包含文字错读（字符级错误）、数字/小数点/千位分隔符识别错误、表格内公式/特殊符号结构丢失或语序/换行处理不当等，使得单元格内容与图像原文不一致并可能改变数值或语义。",
+            "defination_en": "Contents inside a table cell are misrecognized or partially lost: character-level mistakes, misread numbers/decimal/thousand separators, loss or flattening of formulas/special-symbol structures inside cells, or improper handling of line breaks/order — resulting in cell content that diverges from the image and potentially altering numeric values or semantics."
+        }
+    }
+]
