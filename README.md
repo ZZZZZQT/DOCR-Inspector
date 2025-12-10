@@ -3,7 +3,8 @@ DOCR-Inspector: Fine-Grained and Automated Evaluation of Document Parsing with V
 </h1>
 
 <p align="center">
-<a href=""><b>📜 arXiv</b></a> |
+<!-- <a href=""><b>📜 arXiv</b></a> | -->
+ <a href="./paper.pdf"><b>📜 Paper</b></a> |
 <a href="https://huggingface.co/ZQTTTT/DOCR-Inspector-7B"><b>🤗 Huggingface Model</b></a> |
 <a href="https://huggingface.co/datasets/ZQTTTT/DOCRcase-Datasets"><b>🤗 Huggingface Datasets</b></a>
 </p>
