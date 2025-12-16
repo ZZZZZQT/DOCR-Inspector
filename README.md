@@ -415,7 +415,12 @@ We provide a complete evaluation pipeline that supports inference using **DOCR-I
 # Citation
 
 ```
-
+@article{zhang2025docr,
+  title={DOCR-Inspector: Fine-Grained and Automated Evaluation of Document Parsing with VLM},
+  author={Zhang, Qintong and Zhang, Junyuan and Ren, Zhifei and Ouyang, Linke and Wen, Zichen and Niu, Junbo and Qu, Yuan and Wang, Bin and Chow, Ka-Ho and He, Conghui and others},
+  journal={arXiv preprint arXiv:2512.10619},
+  year={2025}
+}
 ```
 
 # License
